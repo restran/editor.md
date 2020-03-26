@@ -19,9 +19,13 @@
     /* Require.js assignment replace */
 
     "use strict";
-
-    var $ = (typeof (window.jQuery) !== "undefined") ? window.jQuery : window.Zepto;
-
+      var $
+      if (window.$ === undefined) {
+        $ = (typeof (window.jQuery) !== "undefined") ? window.jQuery : window.Zepto
+      } else {
+        $ = window.$
+        window.jQuery = $;
+      }
 	if (typeof ($) === "undefined") {
 		return ;
 	}
@@ -1898,7 +1902,8 @@
                 tables      : true,
                 breaks      : true,
                 pedantic    : false,
-                sanitize    : (settings.htmlDecode) ? false : true,  // 关闭忽略HTML标签，即开启识别HTML标签，默认为false
+                // marked 0.7.0 标记为 deprecated and it should NOT be used as it cannot be considered secure.
+                // sanitize: (settings.htmlDecode) ? false : true,  // 关闭忽略HTML标签，即开启识别HTML标签，默认为false
                 smartLists  : true,
                 smartypants : true
             };
