@@ -622,7 +622,7 @@
 .editormd-form .editormd-btn,
 .editormd-dialog-container .editormd-btn,
 .editormd-dialog-footer .editormd-btn {
-  padding: 5px 8px 4px\0;
+  padding: 5px 8px 4px;
 }
 .editormd-form .editormd-btn + .editormd-btn,
 .editormd-dialog-container .editormd-btn + .editormd-btn,
@@ -669,8 +669,8 @@
 .editormd-preview {
   position: absolute;
   top: 35px;
-  right: 0;
-  right: -1px\0;
+  /*right: 0;*/
+  right: -1px;
   overflow: auto;
   line-height: 1.6;
   display: none;
